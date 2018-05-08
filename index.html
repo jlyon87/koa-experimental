@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Koa Demo</title>
+</head>
+<body>
+	<div>
+		<h1>Koa Demo</h1>
+		<p>I'm learning how to use Koa</p>
+		<button onclick="greeting();">Say Hi</button>
+	</div>
+
+	<script src="./node_modules/axios/dist/axios.min.js"></script>
+	<script type="text/javascript">
+		var greeting = function() {
+			axios.get('/hi')
+				.then(res => {
+					console.log('Response', res);
+				})
+				.catch(err => {
+					console.error('Error', err);
+				});
+		};
+	</script>
+</body>
+</html>
